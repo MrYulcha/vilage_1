@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwsolo18kjpin"]
+
+[ext_resource type="Texture2D" uid="uid://4b8swmfsuc1m" path="res://assets/row.svg" id="1_7024n"]
+[ext_resource type="Script" uid="uid://b6je4jhhgxu50" path="res://scenes/row.gd" id="1_nvjmd"]
+[ext_resource type="Texture2D" uid="uid://bio16wejd4nop" path="res://assets/waterMelon.svg" id="2_5i3ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7024n"]
+size = Vector2(121, 117)
+
+[node name="row" type="Node2D"]
+script = ExtResource("1_nvjmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7024n")
+
+[node name="Plant" type="Sprite2D" parent="."]
+texture = ExtResource("2_5i3ed")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_7024n")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

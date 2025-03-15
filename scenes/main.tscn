@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd5usvrt85g3p"]
+
+[ext_resource type="PackedScene" uid="uid://c630m8kg4145k" path="res://scenes/person.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bwsolo18kjpin" path="res://scenes/row.tscn" id="2_0wfyh"]
+
+[node name="main" type="Node2D"]
+
+[node name="row" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(960, 184)
+
+[node name="row2" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(960, 320)
+
+[node name="row3" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(960, 456)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(487, 399)
